@@ -530,13 +530,29 @@
 			}
 			//ex15 ???
 			const changeColumnSize = (size) => {
-				document.queryselector("blog-post h").style.fontSize = size
+				document.querySelector("blog-post h").style.fontSize = size
 			}
 			//ex16
 			const emptyElsewhere = () => {
-				document
-					.queryselector(".blog-sidebar div:nth-child(3) ol:first-of-type > li")
-					.remove()
+				document.querySelector(
+					".blog-sidebar div:nth-child(3) ol:first-of-type"
+				).innerHTML = ""
+			}
+			//ex17
+			const trim50 = () => {
+				let ps = document.querySelectorAll(".blog-post p:nth-of-type(2)")
+				ps.forEach((Paragraph) => {
+					Paragraph.innerText = Paragraph.innerText.substring(50)
+				})
+			}
+			//ex18
+			const newer = () => {
+				let last = document
+					.querySelector(".blog-main")
+					.appendChild(document.createElement("div"))
+				let lastTitle = last.appendChild(document.createElement("h2"))
+				lastTitle.innerText = "last title"
+				last.appendChild(document.createTextNode("last entry"))
 			}
 		</script>
 	</body>
