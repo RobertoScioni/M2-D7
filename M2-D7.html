@@ -492,18 +492,52 @@
 
 		<script>
 			/*
-        JS Exercises
-        EX11) Write a function to add a new link into the navbar
-        EX12) Write a function to remove the "Search" magnifying glass icon
-        EX13) Write a function to change the background of the jumbotron
-        EX14) Write a function to change the color of the main title
-        EX15) Write a function to change the column size for post headings
-        EX16) Write a function to remove all the links under "Elsewhere"
-        EX17) Write a function to trim just the first 50 characters in the first paragraph for each blog post
-        EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title)
-        EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
-        EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
-    */
+			     JS Exercises
+			     EX11) Write a function to add a new link into the navbar
+			     EX12) Write a function to remove the "Search" magnifying glass icon
+			     EX13) Write a function to change the background of the jumbotron
+			     EX14) Write a function to change the color of the main title
+			     EX15) Write a function to change the column size for post headings
+			     EX16) Write a function to remove all the links under "Elsewhere"
+			     EX17) Write a function to trim just the first 50 characters in the first paragraph for each blog post
+			     EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title)
+			     EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
+			     EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
+			 */
+
+			//ex 11)
+			const newLink = () => {
+				let newlink = (document
+					.querySelector("nav")
+					.appendChild(document.createElement("a")).innerText = "new!!!")
+				//newLink.innerText = "new!!!"
+			}
+			//ex12)
+			const removeMagIcon = () => {
+				document.querySelectorAll("svg")[0].remove()
+			}
+			//ex13
+			const jumboTronBg = () => {
+				document.querySelectorAll(".jumbotron")[0].classList.remove("bg-dark")
+				document.querySelectorAll(".jumbotron")[0].style.backgroundColor = "red"
+			}
+			//ex14
+			const colorMainTitle = () => {
+				document
+					.querySelectorAll(".blog-header-logo")[0]
+					.classList.remove("text-dark")
+				document.querySelector(".blog-header-logo").style.color = "red"
+			}
+			//ex15 ???
+			const changeColumnSize = (size) => {
+				document.queryselector("blog-post h").style.fontSize = size
+			}
+			//ex16
+			const emptyElsewhere = () => {
+				document
+					.queryselector(".blog-sidebar div:nth-child(3) ol:first-of-type > li")
+					.remove()
+			}
 		</script>
 	</body>
 </html>
