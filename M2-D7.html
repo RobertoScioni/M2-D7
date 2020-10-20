@@ -530,7 +530,8 @@
 			}
 			//ex15 ???
 			const changeColumnSize = (size) => {
-				document.querySelector("blog-post h").style.fontSize = size
+				//the header does not have his own column so i do not understand this one
+				document.querySelector("blog-post h").style.fontSize = size //i kinda replaced col size for font size in my head before re-reading the assignment
 			}
 			//ex16
 			const emptyElsewhere = () => {
@@ -553,7 +554,36 @@
 				let lastTitle = last.appendChild(document.createElement("h2"))
 				lastTitle.innerText = "last title"
 				last.appendChild(document.createTextNode("last entry"))
+				last.classList.add("blog-post")
 			}
+			//ex19
+			const older = () => {
+				console.log("remove last")
+				document.querySelector(".blog-post:last-of-type").remove()
+			}
+			//ex19-20
+			const load = () => {
+				document
+					.querySelector(".blog-pagination a:last-of-type")
+					.classList.remove("disabled")
+				document.querySelector(
+					".blog-pagination a:last-of-type"
+				).ariaDisabled = false
+				document
+					.querySelector(".blog-pagination a:last-of-type")
+					.addEventListener("click", newer())
+
+				document
+					.querySelector(".blog-pagination a:first-of-type")
+					.classList.remove("disabled")
+				document.querySelector(
+					".blog-pagination a:first-of-type"
+				).ariaDisabled = false
+				document
+					.querySelector(".blog-pagination a:first-of-type")
+					.addEventListener("click", older())
+			}
+			window.onload = load
 		</script>
 	</body>
 </html>
